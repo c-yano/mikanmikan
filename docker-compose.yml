@@ -1,0 +1,21 @@
+lb:
+  image: tutum/haproxy
+  ports:
+    - "80:80"
+  links: 
+    - web
+web:
+  build: .
+  expose:
+    - "80"
+  volumes:
+    - ./:/var/www/html
+  links:
+    - db
+db:
+  image: mysql
+  volumes:
+    - /mnt/sda1/var/lib/mysql:/var/lib/mysql:rw
+    - ./my.cnf.server:/etc/mysql/my.cnf
+  environment:
+    - MYSQL_ROOT_PASSWORD=MySQLAdmin
