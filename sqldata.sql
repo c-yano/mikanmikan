@@ -18,4 +18,3 @@ LOCK TABLES `shop_staff` WRITE;
 INSERT INTO `shop_staff` VALUES (2,'kame3','902b80d36f815b0395cef825e760705d'),(3,'mikan3','5401399df84c65529d31b20e359511bd');
 /*!40000 ALTER TABLE `shop_staff` ENABLE KEYS */;
 UNLOCK TABLES;
--- Dump completed on 2017-02-06  5:50:58
