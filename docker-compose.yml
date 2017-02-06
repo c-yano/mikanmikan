@@ -15,7 +15,11 @@ web:
 db:
   image: mysql
   volumes:
-    - /mnt/sda1/var/lib/mysql:/var/lib/mysql:rw
+    - ./dump.sql:/dump.sql
+    - ./sqldata.sql:/sqldata.sql
     - ./my.cnf.server:/etc/mysql/my.cnf
   environment:
     - MYSQL_ROOT_PASSWORD=MySQLAdmin
+    - MYSQL_DB=Shop
+    - MYSQL_USER=shopadmin
+    - MYSQL_PASSWORD=AdminPassword
