@@ -15,6 +15,7 @@ web:
 db:
   image: mysql
   volumes:
+    - mysql-data:/var/lib/mysql
     - ./dump.sql:/dump.sql
     - ./sqldata.sql:/sqldata.sql
     - ./my.cnf.server:/etc/mysql/my.cnf
