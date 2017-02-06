@@ -29,4 +29,4 @@ CREATE TABLE `shop_staff` (
   PRIMARY KEY (`code`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
--- Dump completed on 2017-02-06  5:50:58
+-- Dump completed on 2017-02-06 
