@@ -1,4 +1,5 @@
 -- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (x86_64)
+
 --
 -- Host: 0.0.0.0    Database: Shop
 -- ------------------------------------------------------
