@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-   <head>
-    <meta charset = "UTF-8">
-    <title>まるまるショップ</title>
-    </head>
-    <body>
-    
-    <?php
+<?php
 
+    $msg_body = '';
+    
     try{
         $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
         $user = 'shopadmin';
@@ -19,33 +13,79 @@
         $stmt = $dbh->prepare($sql);
         $stmt->execute();
         
-        print'商品一覧<br><br>';
+        $msg_body.='商品一覧<br><br>';
         
-        print'<form method = "post" action = "product_branch.php">';
+        $msg_body.='<form method = "post" action = "product_branch.php">';
         
         while(true){
             $rec = $stmt-> fetch(PDO::FETCH_ASSOC);
             if ($rec == false){
-            break;
+                break;
             }
-            print '<input type = "radio" name="pcode" value="'.$rec['code'].'">';
-            print $rec['name'].'...';
-            print $rec['price'].'円';
-            print '<br>';
+            $msg_body.='<input type = "radio" name="pcode" value="'.$rec['code'].'">';
+            $msg_body.=$rec['name'];
+            $msg_body.='...';
+            $msg_body.=$rec['price'];
+            $msg_body.='円';
+            $msg_body.='<br>';
         }
             
-        print '<input type = "submit" name ="disp" value = "表示">';
-        print '<input type = "submit" name ="add" value = "追加">';
-        print '<input type = "submit" name ="edit" value = "修正">';
-        print '<input type = "submit" name ="delete" value = "削除">';
-        print '</form>';
+        $msg_body.='<input type = "submit" name ="disp" value = "表示">';
+        $msg_body.='<input type = "submit" name ="add" value = "追加">';
+        $msg_body.='<input type = "submit" name ="edit" value = "修正">';
+        $msg_body.='<input type = "submit" name ="delete" value = "削除">';
+        $msg_body.='</form>';
         
         $dbh = null;
     } catch (Exception $e) {
+        printHeader();
         print 'ただいま障害により大変ご迷惑をお掛けしております。';
+        printFooter();
         exit();
     }
-    ?>
-    <br>
-    </body>
-</html>
+    
+    /**
+     * 画面表示処理
+     */
+    printHeader();
+    print $msg_body;
+    printFooter();
+
+
+    /**
+     *
+     * 画面表示処理を以下にまとめる
+     */
+     
+    /**
+     * Name: printHeader
+     * Note: HTMLヘッダ情報表示
+     * 
+     * @auther  isamu.koseda@gmail.com
+     * @param   non
+     * @return  void
+     */
+    function printHeader() {
+        print '<!DOCTYPE html>';
+        print '<html>';
+        print '   <head>';
+        print '    <meta charset = "UTF-8">';
+        print '    <title>まるまるショップ</title>';
+        print '    </head>';
+        print '    <body>';
+    }
+    
+    /**
+     * Name: printFooter
+     * Note: HTMLフッター情報表示
+     * 
+     * @auther  isamu.koseda@gmail.com
+     * @return  void
+     */
+    function printFooter() {
+        print '    <br>';
+        print '    </body>';
+        print '</html>';
+    }
+
+?>
