@@ -1,10 +1,12 @@
 # 環境要件  
-    -Cloud9（新規WorkSpaces）  
-    -Github  
-# インストール手順 h1   
-    ## Cloud9 h2 
-    -Cloud9にて新規WorkSpacesを用意  
-    -修正するコードを取り込む  
+- Cloud9（新規WorkSpaces）  
+- Github
+
+# インストール手順   
+## Cloud9
+- Cloud9にて新規WorkSpacesを用意(Create a new WorkSpaces）
+1. WorkSpace name（大文字NG）、Description
+- 修正するコードを取り込む  
     SSH：git@github.com:c-yano/mikanmikan.git  
     http:https://github.com/c-yano/mikanmikan.git  
 # Githubにて
