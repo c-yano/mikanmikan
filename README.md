@@ -28,16 +28,20 @@ FY16に実施した勉強会のコードを整理する
 3. Cloud9にてbranchを作成
 #### branchルール 
 #### branchはissue毎に用意し、branch名は、githubでアサインされたissue#+issue番号
-    - git branch issue#番号（番号はissue番号）
-    - git checkout issue#番号
+```
+$ git branch issue#番号（番号はissue番号）
+$ git checkout issue#番号
+```
 4. 各自のCloud9にてコード修正
 5. コードの修正後、マージリクエストする
-#### 
-    - git add file-name (ステージングエリアにあげる)
-    - git commit (コメント付きでコミット)
+```
+$ git add file-name // ステージングエリアにあげる
+$ git commit -m "#番号 修正内容を簡潔に記入する" // コメント付きでコミットする例
+```
 - コメントにはissue番号（#番号)を明記
-####
-    - git push origin issue#番号(リモートブランチにコードを追加)
+```
+$ git push origin issue#  // 番号リモートブランチにコードを追加)
+```
 - slackへ通知される（Channle github-link）
  6. githubにてpull-requestを実施
 - pull-requestタブにて「New pull-Requests」を作成
