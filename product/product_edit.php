@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>まるまるショップ</title>
-    </head>
-    <body>
-        <?php
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<html>
+#    <head>
+#        <meta charset="UTF-8">
+#        <title>まるまるショップ</title>
+#    </head>
+#    <body>
+#        <?php
         try {
             
             $pcode = $_GET['pcode'];    
             
-            $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
-            $user = 'shopadmin';
-            $password = 'AdminPassword';
-            $dbh = new PDO($dsn, $user, $password);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require_once('../common/common.php');
+    	    $dbh = connectShopTable();
+    	    
+            #$dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
+            #$user = 'shopadmin';
+            #$password = 'AdminPassword';
+            #$dbh = new PDO($dsn, $user, $password);
+            #$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $sql = 'SELECT name,price,gazou FROM shop_product WHERE code=?';
             $stmt = $dbh->prepare($sql);      
@@ -31,14 +38,14 @@
             if ($pro_gazou_name_old == ' '){
                 $disp_gazou = '';
             } else {
-                $disp_gazou = '<img src="./gazou/'.$pro_gazou_name_old.'">';
+                $disp_gazou = '<img src="../gazou/'.$pro_gazou_name_old.'">';
             }
         } catch (Exception $e) {
             print'ただいま障害により大変ご迷惑をお掛けしております。';
             exit();
         }
         
-        ?>
+?>
         
         商品修正<br>
         <br>
@@ -67,5 +74,5 @@
         </form>
         
 
-    </body>
-</html>
+    <!-- /body>
+</html -->

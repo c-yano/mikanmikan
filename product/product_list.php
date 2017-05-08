@@ -3,11 +3,15 @@
     $msg_body = '';
     
     try{
-        $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
-        $user = 'shopadmin';
-        $password ='AdminPassword';
-        $dbh = new PDO($dsn,$user,$password);
-        $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        require_once('../common/common.php');
+        #connectDB();
+        $dbh = connectShopTable();
+        #$dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
+        #$user = 'shopadmin';
+        #$password ='AdminPassword';
+        #$dbh = new PDO($dsn,$user,$password);
+        #$dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
         
         $sql = 'SELECT code,name,price FROM shop_product';
         $stmt = $dbh->prepare($sql);
@@ -47,9 +51,10 @@
     /**
      * 画面表示処理
      */
-    printHeader();
+    require_once('../common/common.php');
+    printShopHtmlHeader();
     print $msg_body;
-    printFooter();
+    printShopHtmlFooter();
 
 
     /**
@@ -65,15 +70,6 @@
      * @param   non
      * @return  void
      */
-    function printHeader() {
-        print '<!DOCTYPE html>';
-        print '<html>';
-        print '   <head>';
-        print '    <meta charset = "UTF-8">';
-        print '    <title>まるまるショップ</title>';
-        print '    </head>';
-        print '    <body>';
-    }
     
     /**
      * Name: printFooter
@@ -82,10 +78,5 @@
      * @auther  isamu.koseda@gmail.com
      * @return  void
      */
-    function printFooter() {
-        print '    <br>';
-        print '    </body>';
-        print '</html>';
-    }
 
 ?>

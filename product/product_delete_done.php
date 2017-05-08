@@ -1,22 +1,30 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-	<META charset="UTF-8">
-	<TITLE>まるまるショップ</TITLE>
-</HEAD>
-<BODY>
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#	<META charset="UTF-8">
+#	<TITLE>まるまるショップ</TITLE>
+#</HEAD>
+#<BODY>
 
-	<?php
+#	<?php
 	  var_dump($_GET);
 	try{
         $pcode = $_GET['pcode'];
         $pro_gazou_name_old =$_GET['gazou_name_old'];
+        
+        require_once('../common/common.php');
+    	$dbh = connectShopTable();
     
-	    $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
-    	$user = 'shopadmin';
-    	$password = 'AdminPassword';
-    	$dbh = new PDO($dsn, $user, $password);
-    	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    #$dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
+    	#$user = 'shopadmin';
+    	#$password = 'AdminPassword';
+    	#$dbh = new PDO($dsn, $user, $password);
+    	#$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    	
     	
     	$sql = "DELETE FROM shop_product WHERE code = $pcode";
     	$stmt = $dbh->prepare($sql);
@@ -26,7 +34,7 @@
     	
     	if ($pro_gazou_name_old != $pro_gazou_name){
         	if($pro_gazou_name_old != " ") {
-            unlink("./gazou/".$pro_gazou_name_old);
+            unlink("../gazou/".$pro_gazou_name_old);
         	}
     	}
     	  
@@ -40,8 +48,8 @@
 
 	<A href = "product_list.php">戻る</A>
 
-</BODY>
+<!-- /BODY>
 
-</HTML>
+</HTML -->
 
 

@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-    <META charset="UTF-8">
-    <TITLE>まるまるショップ</TITLE>
-</HEAD>
-<BODY>
-    <?php
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#    <META charset="UTF-8">
+#    <TITLE>まるまるショップ</TITLE>
+#</HEAD>
+#<BODY>
+#    <?php
     var_dump($POST);
     $pro_name=$_POST['name'];
     $pro_price = $_POST['price'];
@@ -53,5 +57,5 @@
         print '</form>';
         }
 ?>
-</BODY>
-</HTML>
+<!-- /BODY -->
+<!-- /HTML -->

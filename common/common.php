@@ -9,8 +9,9 @@
         print ' </head>'.PHP_EOL;
         print ' <body>'.PHP_EOL;
     }
-    
-    function printShopHrmlFooter() {
+
+    function printShopHtmlFooter() {
+        print ' </body>'.PHP_EOL;
         print '</html>'.PHP_EOL;
     }
     
