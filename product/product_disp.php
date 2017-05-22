@@ -1,7 +1,7 @@
 <?php
     require_once('../common/common.php');
     printShopHtmlHeader();
-    printShopHtmlFooter();
+
 #<!DOCTYPE html>
 #<HTML>
 #<HEAD>
@@ -82,6 +82,8 @@
         <form>
             <input type="button" onclick="history.back()" value="戻る">
         </form>
-
+<?php
+    printShopHtmlFooter();
+?>
     <!-- /body>
 </html -->

@@ -1,7 +1,7 @@
 <?php
     require_once('../common/common.php');
     printShopHtmlHeader();
-    printShopHtmlFooter();
+
 #<!DOCTYPE html>
 #<html>
 #    <head>
@@ -69,10 +69,12 @@
         画像<br>
         <input type ="file" name="gazou" style="width:400px"><br>
         
-        <input type="button" onclick="hidden.back()" value="戻る">
+        <input type="button" onclick="history.back()" value="戻る">
         <input type="submit" value="OK">
         </form>
-        
 
+<?php      
+    printShopHtmlFooter();
+?>
     <!-- /body>
 </html -->
