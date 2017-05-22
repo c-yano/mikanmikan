@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-    <META charset="UTF-8">
-    <TITLE>まるまるショップ</TITLE>
-</HEAD>
-<BODY>
-    <?php
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#    <META charset="UTF-8">
+#    <TITLE>まるまるショップ</TITLE>
+#</HEAD>
+#<BODY>
+#    <?php
     var_dump($_POST);
     $pcode=$_POST['pcode'];
     $pro_name=$_POST['name'];
@@ -42,8 +46,8 @@
         if($pro_gazou['size'] > 1000000){
             print'画像が大きすぎます';
         } else {
-            move_uploaded_file($pro_gazou['tmp_name'],'./gazou/'.$pro_gazou['name']);
-            print'<img_src="./gazou/'.$pro_gazou['name'].'">';
+            move_uploaded_file($pro_gazou['tmp_name'],'../gazou/'.$pro_gazou['name']);
+            print'<img_src="../gazou/'.$pro_gazou['name'].'">';
             print'<br>';
         }
     }
@@ -67,5 +71,5 @@
         print '</form>';
         }
 ?>
-</BODY>
-</HTML>
+<!-- /BODY>
+</HTML -->

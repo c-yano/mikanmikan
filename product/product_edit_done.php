@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-    <META charset = 'UTF-8'>
-    <TITLE> まるまるショップ</TITLE>
-</HEAD>
-<BODY>
-
-
 <?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#    <META charset = 'UTF-8'>
+#    <TITLE> まるまるショップ</TITLE>
+#</HEAD>
+#<BODY>
+
+
+#<?php
 try {
     $pcode = $_POST['pcode'];
     $pro_name = $_POST['name'];
@@ -17,11 +21,14 @@ try {
     
     var_dump($_POST);
     
-    $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
-    $user = 'shopadmin';
-    $password = 'AdminPassword';
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    require_once('../common/common.php');
+	$dbh = connectShopTable();
+    
+    #$dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
+    #$user = 'shopadmin';
+    #$password = 'AdminPassword';
+    #$dbh = new PDO($dsn, $user, $password);
+    #$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $sql = 'UPDATE shop_product SET name = :name, price = :price, gazou = :gazou_name WHERE code = :pcode';
     /* SQLを実行する前にあらかじめそこに入れる値を用意しておく */
@@ -60,6 +67,6 @@ try {
 
 <A href = "product_list.php">戻る</A>
 
-</BODY>
+<!-- /BODY>
 
-</HTML>
+</HTML -->
