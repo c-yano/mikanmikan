@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-	<META charset="UTF-8">
-	<TITLE>まるまるショップ</TITLE>
-</HEAD>
-<BODY>
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#	<META charset="UTF-8">
+#	<TITLE>まるまるショップ</TITLE>
+#</HEAD>
+#<BODY>
 
-	<?php
+#	<?php
 	        
 	try{
       $pcode = $_GET['pcode'];
-    
-	    $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
-    	$user = 'shopadmin';
-    	$password = 'AdminPassword';
-    	$dbh = new PDO($dsn, $user, $password);
-    	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      require_once('../common/common.php');
+      $dbh = connectShopTable(); 
+#	    $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
+#    	$user = 'shopadmin';
+#    	$password = 'AdminPassword';
+#    	$dbh = new PDO($dsn, $user, $password);
+#    	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    	
     	$sql = "SELECT name,price,gazou FROM shop_product WHERE code = $pcode";
     	$stmt = $dbh->prepare($sql);
         $stmt->execute();
@@ -41,9 +48,9 @@
         print '</form>';
 	?>
 
-</BODY>
+<!-- /BODY>
 
-</HTML>
+</HTML -->
 
 
 

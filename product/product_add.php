@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-	<META charset="UTF-8">
-	<TITLE>まるまるショップ</TITLE>
-</HEAD>
-<BODY>
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
+    printShopHtmlFooter();
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#	<META charset="UTF-8">
+#	<TITLE>まるまるショップ</TITLE>
+#</HEAD>
+?>
+<!-- BODY -->
 	
 	<!-- 商品追加フォームの本文 -->
 	商品追加<BR><BR>
@@ -21,16 +26,15 @@
 	
 		画像を選んでください。<BR/>
 		<input type="file" name="gazou" style="width:400px"><br>
-	<br>
+    	<br>
 
 		<!-- 戻るボタンとSubmitボタンを配置 -->
 		<INPUT type="button" onclick="history.back()" value="戻る">
 		<INPUT type="submit" value="OK">
 		
-		</style>
+<!-- /style -->
 	</FORM>
 
-	
-	
-</BODY>
-</HTML>
+<!-- /BODY -->
+<!-- /HTML -->
+

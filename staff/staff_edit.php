@@ -53,7 +53,7 @@
 		パスワードをもう一度入力ください。<br>
 		<input type = "password" name = "pass2" style = "width:100px"/><br>
 		<br>
-        <input type="button" onclick="hidden.back()" value="戻る">
+        <input type="button" onclick="history.back()" value="戻る">
         <input type="submit" value="OK">
         </form>
         

@@ -7,11 +7,7 @@
 --
 -- Drop all tables and database
 --
-USE `Shop`;
 
-DROP TABLE IF EXISTS `shop_product`;
-DROP TABLE IF EXISTS `shop_staff`;
-DROP DATABASE `Shop`;
 
 --
 -- Create Database and Set Privileges

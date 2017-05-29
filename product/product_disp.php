@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-	<META charset="UTF-8">
-	<TITLE>まるまるショップ</TITLE>
-</HEAD>
-<BODY>
+<?php
+    require_once('../common/common.php');
+    printShopHtmlHeader();
 
-	<?php
+#<!DOCTYPE html>
+#<HTML>
+#<HEAD>
+#	<META charset="UTF-8">
+#	<TITLE>まるまるショップ</TITLE>
+#</HEAD>
+#<BODY>
+
+#	<?php
 	try{
         $pcode = $_GET['pcode'];
+        
+        require_once('../common/common.php');
+    	$dbh = connectShopTable();    
     
-	    $dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
-    	$user = 'shopadmin';
-    	$password = 'AdminPassword';
+	    #$dsn = 'mysql:dbname=Shop;host=localhost;charset=utf8';
+    	#$user = 'shopadmin';
+    	#$password = 'AdminPassword';
+    	#$dbh = new PDO($dsn, $user, $password);
+    	#$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	
-    	$dbh = new PDO($dsn, $user, $password);
-    	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     	$sql = "SELECT name,price,gazou FROM shop_product WHERE code = ?";
     	$stmt = $dbh->prepare($sql);
     	$data[] = $pcode;
@@ -75,6 +82,8 @@
         <form>
             <input type="button" onclick="history.back()" value="戻る">
         </form>
-
-    </body>
-</html>
+<?php
+    printShopHtmlFooter();
+?>
+    <!-- /body>
+</html -->
