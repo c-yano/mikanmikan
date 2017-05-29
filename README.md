@@ -48,10 +48,14 @@ $ git commit -m "#番号 修正内容を簡潔に記入する" // コメント�
 $ git push origin issue#番号  // リモートブランチにコードを追加
 ```
 slackへ通知される（Channle github-link）  
+
 6. githubにてpull-requestを実施  
-pull-requestタブにて「New pull-Requests」を作成  
-base-Masterとブランチの比較をして確認  
-その後「Create pull Request」  
+    - pull-requestタブにて「New pull-Requests」を作成  
+    - base-Masterとブランチの比較をして確認  
+    - その後「Create pull Request」  
+
 7. マージ処理（Masterにて実施）  
+
 8. Cloud9上にて作成したgit branchの削除とgithub上にて担当したissueのcloseを実施  
+
 slackへ通知される（Channle github-link）  
