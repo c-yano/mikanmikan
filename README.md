@@ -25,17 +25,18 @@ FY16に実施した勉強会のコードを整理する
 1. issueの作成(githubにて)  
     - 勉強会にてissueをあげる  
 2. issueのアサイン(githubにて)  
-    - アサインされたissueを解決する  
-3. Cloud9にてbranchを作成  
-*** branchルール *** 
+    - アサインされたissueを解決する  
+3. 各自のCloud9にてコード修正するために、最新のコードを取得  
+```
+$ git pull origin master //github上のmasterからコードを取得
+```
+4. Cloud9にてbranchを作成
+
+* branchルール  
 branchはissue毎に用意し、branch名は、githubでアサインされたissue#+issue番号  
 ```
 $ git branch issue#番号  // 番号はissue番号
 $ git checkout issue#番号
-```
-4. 各自のCloud9にてコード修正  
-```
-$ git pull origin master //github上のmasterからコードを取得
 ```
 5. コードの修正後、マージリクエストする  
 ```
