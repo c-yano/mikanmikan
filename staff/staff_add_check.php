@@ -9,8 +9,8 @@
     $staff_name = $_POST['name'];
     $staff_pass = $_POST['pass'];
     $staff_pass2 = $_POST['pass2'];
-    var_dump($staff_pass);
-    var_dump($staff_pass2);
+    //var_dump($staff_pass);
+    //var_dump($staff_pass2);
     if($staff_name =="") {
         print 'スタッフが入力されていません。<br>';
     } else {

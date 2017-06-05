@@ -7,7 +7,7 @@
     printShopHtmlHeader();
     printShopMemberName();
     
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     
     $onamae = filter_input(INPUT_POST,"onamae");
     $mail = filter_input(INPUT_POST,"mail");

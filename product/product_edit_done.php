@@ -19,7 +19,7 @@ try {
     $pro_gazou_name_old =$_POST['gazou_name_old'];
     $pro_gazou_name = $_POST['gazou_name'];
     
-    var_dump($_POST);
+    #var_dump($_POST);
     
     require_once('../common/common.php');
 	$dbh = connectShopTable();
