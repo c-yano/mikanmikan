@@ -3,7 +3,7 @@ MAINTAINER go_chiba <go.chiba@gmail.com>
 
 RUN yum update -y
 
-RUN yum install -y \
+RUN rpm --rebuilddb; yum install -y \
     httpd \
     mysql \
     mysql-server
