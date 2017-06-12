@@ -7,7 +7,7 @@
     printShopHtmlHeader();
     printShopMemberName();
     
-    var_dump($_SESSION);
+    #var_dump($_SESSION);
     
     try{
         $dbh = connectShopTable();

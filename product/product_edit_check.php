@@ -10,7 +10,7 @@
 #</HEAD>
 #<BODY>
 #    <?php
-    var_dump($_POST);
+    #var_dump($_POST);
     $pcode=$_POST['pcode'];
     $pro_name=$_POST['name'];
     $pro_price = $_POST['price'];

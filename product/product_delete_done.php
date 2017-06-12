@@ -11,7 +11,7 @@
 #<BODY>
 
 #	<?php
-	  var_dump($_GET);
+	  #var_dump($_GET);
 	try{
         $pcode = $_GET['pcode'];
         $pro_gazou_name_old =$_GET['gazou_name_old'];

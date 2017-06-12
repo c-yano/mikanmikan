@@ -7,7 +7,7 @@ require_once('../common/common.php');
 printShopHtmlHeader();
 printShopMemberName();
 
-var_dump($_GET);
+#var_dump($_GET);
 
 try {
     $pcode = $_GET['pcode'];

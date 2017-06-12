@@ -7,7 +7,7 @@
     printShopHtmlHeader();
     printShopMemberName();
     
-    var_dump($_SESSION);
+    #var_dump($_SESSION);
 ?>
 	<!-- 商品追加フォームの本文 -->
 	お客様情報を入力してください<BR><BR>

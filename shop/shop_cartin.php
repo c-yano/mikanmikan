@@ -6,7 +6,7 @@
     printShopHtmlHeader();
     printShopMemberName();
     
-    var_dump($_SESSION);
+    #var_dump($_SESSION);
     
     try {
         $pcode = $_GET['pcode'];

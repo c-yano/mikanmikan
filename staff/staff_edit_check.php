@@ -6,7 +6,7 @@
 </HEAD>
 <BODY>
     <?php
-    var_dump($_POST);
+    //var_dump($_POST);
     $staffcode=$_POST['staffcode'];
     $staff_name=$_POST['name'];
     $staff_pass = $_POST['pass'];
